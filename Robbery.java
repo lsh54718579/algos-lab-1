@@ -5,22 +5,21 @@
 // You are encouraged to make helper functions!
 
 public class Robbery {
-
+	int q;
 	// Using DP: Get the maximum value with capacity C and n items
-	public int maximizeRobWorthRecur(
-		int capacity,
-		int[] sizes,
-		int[] worths
-	) {
-		// fill in here, change the return
-			return 0;
+	public int maximizeRobWorthRecur(int capacity, int[] sizes,int[] worths) {
+		if (capacity==0)
+		return 0;
+		q=0;
+		for (int i=0;i<capacity;i++) {
+			System.out.println(sizes[i]);
+			q=Math.max(q,worths[i]+maximizeRobWorthRecur(capacity-sizes[i], sizes, worths));
+		}
+		return q;
+		
 	}
 
-	public int maximizeRobWorthBottomUp(
-		int capacity,
-		int[] sizes,
-		int[] worths
-	) {
+	public int maximizeRobWorthBottomUp(int capacity,int[] sizes,int[] worths) {
 		// fill in here, change the return
 		return 0;
 	}
